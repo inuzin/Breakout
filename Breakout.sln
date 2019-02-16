@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breakout", "Breakout\Breakout.csproj", "{BB2D550D-198F-4373-99CC-A0AAED448D51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB2D550D-198F-4373-99CC-A0AAED448D51}.Debug|x86.ActiveCfg = Debug|x86
+		{BB2D550D-198F-4373-99CC-A0AAED448D51}.Debug|x86.Build.0 = Debug|x86
+		{BB2D550D-198F-4373-99CC-A0AAED448D51}.Release|x86.ActiveCfg = Release|x86
+		{BB2D550D-198F-4373-99CC-A0AAED448D51}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6024C1E-B054-41C9-8BE3-4666D7C64372}
+	EndGlobalSection
+EndGlobal
