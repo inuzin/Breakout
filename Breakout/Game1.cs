@@ -21,6 +21,10 @@ namespace Breakout
         Ball ball = new Ball();
         Block block = new Block();
 
+        int Score;
+
+        SpriteFont font;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -56,6 +60,8 @@ namespace Breakout
             paddle.LoadContent(Content);
             ball.LoadContent(Content);
             block.LoadContent(Content);
+
+            font = Content.Load<SpriteFont>("Scorefont");
         }        
 
         /// <summary>
@@ -104,7 +110,7 @@ namespace Breakout
 
                     if (ball.GetBallPosY() <= block.blocksrect[i].Bottom)
                     {
-                        ball.SetBallSpeedY(2);
+                    ball.SetBallSpeedY(2); 
                     }
 
                     if (ball.GetBallPosX() <= block.blocksrect[i].Right)
@@ -117,13 +123,31 @@ namespace Breakout
                         ball.SetBallSpeedX(-2);
                     }
 
-                    //Remove bloco
+                    //Remove block
                     block.blocksrect.RemoveAt(i);
-
                     block.SetTotalBlocks(1);
+                    Score += 10;
                 }
             }
             
+        }
+
+        public void Reset()
+        {
+            //Return ball to initial position
+            //Retorna bola para pos inicial
+            ball.SetBallPos(new Vector2(400, 250));
+
+            //Update total blocks
+            //Atualiza total de blocos
+            block.SetTotalBlocks(block.GetColumns() * block.GetRows());
+
+            //Rebuild blocks
+            //Reconstroi blocos
+            block.AssignBlocks();
+
+            //Reset Score
+            Score = 0;
         }
 
         /// <summary>
@@ -138,6 +162,8 @@ namespace Breakout
             paddle.Draw(spriteBatch);
             ball.Draw(spriteBatch);
             block.Draw(spriteBatch);
+
+            spriteBatch.DrawString(font, "Score: " + Score, new Vector2(640, 0), Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);

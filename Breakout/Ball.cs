@@ -91,6 +91,11 @@ namespace Breakout
             return ballpos.X;
         }
 
+        public void SetBallPos(Vector2 a)
+        {
+            ballpos = a;
+        }
+
         public void Draw(SpriteBatch batch)
         {
             batch.Draw(ball, ballrect, Color.White);

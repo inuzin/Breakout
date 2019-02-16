@@ -31,17 +31,7 @@ namespace Breakout
 
         public void Update()
         {
-
-            AssignBlocks();
-
-            //Load the blocks rectangle in relation to the total blocks count
-            //Carrega o retangulo dos blocos de acordo com o total de blocos criados
-
-            for (int i = 0; i <= totalblocks; i++)
-            {
-                blocksrect.Add(new Rectangle((int)blocks[i].X, (int)blocks[i].Y, block.Width, block.Height));
-            }
-
+        AssignBlocks();
         }
 
         public int GetTotalBlocks()
@@ -52,6 +42,16 @@ namespace Breakout
         public int SetTotalBlocks(int a)
         {
             return totalblocks -= a;
+        }
+
+        public int GetColumns()
+        {
+            return columns;
+        }
+
+        public int GetRows()
+        {
+            return rows;
         }
 
         public void AssignBlocks()
@@ -67,6 +67,13 @@ namespace Breakout
 
                 x = 0;
                 y += (int)block.Height;
+            }
+
+            //Load the blocks rectangle in relation to the total blocks count
+            //Carrega o retangulo dos blocos de acordo com o total de blocos criados
+            for (int i = 0; i <= totalblocks; i++)
+            {
+                blocksrect.Add(new Rectangle((int)blocks[i].X, (int)blocks[i].Y, block.Width, block.Height));
             }
         }
 
