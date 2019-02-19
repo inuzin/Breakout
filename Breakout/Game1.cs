@@ -93,12 +93,13 @@ namespace Breakout
 
         public void Collision()
         {
+            //Ball collides with paddle
             if (ball.ballrect.Intersects(paddle.paddlerect))
             {
                 ball.SetBallSpeedY(-2);
             }
 
-            
+            //Ball collides with blocks
             for (int i = 0; i <= block.GetTotalBlocks(); i++)
             {
                 if (ball.ballrect.Intersects(block.blocksrect[i]))
@@ -123,7 +124,7 @@ namespace Breakout
                         ball.SetBallSpeedX(-2);
                     }
 
-                    //Remove block
+                    //Remove block and add Score
                     block.blocksrect.RemoveAt(i);
                     block.SetTotalBlocks(1);
                     Score += 10;
@@ -135,15 +136,12 @@ namespace Breakout
         public void Reset()
         {
             //Return ball to initial position
-            //Retorna bola para pos inicial
             ball.SetBallPos(new Vector2(400, 250));
 
             //Update total blocks
-            //Atualiza total de blocos
             block.SetTotalBlocks(block.GetColumns() * block.GetRows());
 
             //Rebuild blocks
-            //Reconstroi blocos
             block.AssignBlocks();
 
             //Reset Score

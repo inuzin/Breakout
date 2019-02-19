@@ -56,6 +56,8 @@ namespace Breakout
 
         public void AssignBlocks()
         {
+            //Create the blocks position list
+
             for (int a = 0; a <= rows; a++)
             {
                 for (int b = 0; b <= columns; b++)
@@ -70,7 +72,6 @@ namespace Breakout
             }
 
             //Load the blocks rectangle in relation to the total blocks count
-            //Carrega o retangulo dos blocos de acordo com o total de blocos criados
             for (int i = 0; i <= totalblocks; i++)
             {
                 blocksrect.Add(new Rectangle((int)blocks[i].X, (int)blocks[i].Y, block.Width, block.Height));

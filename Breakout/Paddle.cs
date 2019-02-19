@@ -26,7 +26,6 @@ namespace Breakout
         {          
 
             //Load the paddle rectangle
-            //Carrega o retangulo da paddle
             paddlerect = new Rectangle((int)paddlepos.X, (int)paddlepos.Y, paddle.Width, paddle.Height);
 
             Input();
@@ -36,7 +35,6 @@ namespace Breakout
         public void Input()
         {
             //Controls the player input of the paddle
-            //Controla o input do jogador com a paddle
 
             KeyboardState keyboard = Keyboard.GetState();
 
@@ -54,7 +52,6 @@ namespace Breakout
         public void Bounds()
         {
             //Limit the windows bounds for the paddle
-            //Delimita os limites da tela para a paddle
 
             if(paddlepos.X <= Boundleft)
             {

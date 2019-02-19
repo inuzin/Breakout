@@ -25,7 +25,6 @@ namespace Breakout
         public void Update()
         {
             //Load the ball rectangle
-            //Carrega o retangulo da bola
             ballrect = new Rectangle((int)ballpos.X, (int)ballpos.Y, ball.Width, ball.Height);
 
             Bounce();
@@ -35,11 +34,11 @@ namespace Breakout
 
         public void Bounce()
         {
-
+            //Start ball movement
             ballpos.X += ballspeedX;
             ballpos.Y += ballspeedY;
          
-
+            //Ball collides with screen bounds and bounce back
             if(ballpos.X <= boundleft)
             {
                 ballspeedX = -ballspeedX;
