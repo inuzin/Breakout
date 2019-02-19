@@ -1,7 +1,7 @@
 A simple Breakout clone made in C# with Monogame.
 ______________________________________________________
 
-Ball.cs makes the ball bounce around the screen once it detects any screen bounds.
+Ball.cs: makes the ball bounce around the screen once it detects any screen bounds.
 
 Padle.cs: Receives the player input and moves the paddle.
 
